@@ -20,7 +20,7 @@ class CreateAuthorsTable extends Migration
             $table->string('place_of_birth');
             $table->string('gender');
             $table->string('email');
-            $table->varchar(20)('hp');
+            $table->string('hp');
             $table->timestamps(); //otomatis akan membuat dua colom create_at dan update_at
         });
     }
