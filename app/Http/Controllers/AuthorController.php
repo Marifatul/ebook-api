@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Author;
+use JWTAuth;
 
 class AuthorController extends Controller
 {
@@ -85,5 +86,9 @@ class AuthorController extends Controller
         $author = Author::find($id);
         $author->delete();
         return "Data berhasil di hapus";
+    }
+
+    public function __construct() {
+        $this->middleware('auth:api');
     }
 }
